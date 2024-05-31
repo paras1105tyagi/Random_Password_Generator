@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      body {
+    background-image: url('https://lh6.googleusercontent.com/proxy/zfYjFBOYvdgIJm991g6VpG_emJwDPX4xktDwAhT4ELt7SDr2wtTWPy_yHIl9GtGQ5iiuMCxeZEkbKHraKt6iIoGh1stRUVTHh5eKUA-pHEPp=w3840-h2160-p-k-no-nd-mv');
+    /* Other styles for the body element */
+}
+
+      div {
+          margin-bottom: 20px;
+          padding: 10px; /* Adjust the value as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgb(117, 70, 192)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About this App</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Delhi</a></li>
+                    <li><a class="dropdown-item" href="#">Una</a></li>
+                    <li><a class="dropdown-item" href="#">Muzaffarnagar</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">How to use?</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h2 style="text-align: center;">Weather for <span id="cityName"></span></h2>
+        <div class="card-group">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Temperature</h5>
+                <ul>
+                  <li>Temperature is <span id="temp"></span></li>
+                  <li>Min Temperature is <span id="min_temp"></span></li>
+                  <li>Max Temperature is <span id="max_temp"></span></li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cloud and Humidity</h5>
+                <ul>
+                  <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                  <li>Feels like <span id="feels_like"></span></li>
+                  <li>Humidity is <span id="humidity"></span></li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Wind and Sun</h5>
+                <ul>
+                  <li>Wind speed is <span id="wind_speed"></span></li>
+                  <li>Sunrise Time is <span id="sunrise"></span></li>
+                  <li>Sunset Time is <span id="sunset"></span></li>
+                  <li>Wind Degrees is <span id="wind_degrees"></span></li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+              </div>
+            </div>
+        </div>
+     </div>
+
+     <div class="other_places">
+        <h1 style="text-align: center;">Weather at various places</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">City</th>
+              <th scope="col">Cloud_pct</th>
+              <th scope="col">Temp</th>
+              <th scope="col">Feels_like</th>
+              <th scope="col">Humidity</th>
+              <th scope="col">Min_temp</th>
+              <th scope="col">Max_temp</th>
+              <th scope="col">Wind_speed</th>
+              <th scope="col">Wind_degrees</th>
+              <th scope="col">Sunrise</th>
+              <th scope="col">Sunset</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Melbourne</th>
+              <td id="melbourne_cloud_pct"></td>
+              <td id="melbourne_temp"></td>
+              <td id="melbourne_feels_like"></td>
+              <td id="melbourne_humidity"></td>
+              <td id="melbourne_min_temp"></td>
+              <td id="melbourne_max_temp"></td>
+              <td id="melbourne_wind_speed"></td>
+              <td id="melbourne_wind_degrees"></td>
+              <td id="melbourne_sunrise"></td>
+              <td id="melbourne_sunset"></td>
+            </tr>
+            <tr>
+              <th scope="row">Noida</th>
+              <td id="noida_cloud_pct"></td>
+              <td id="noida_temp"></td>
+              <td id="noida_feels_like"></td>
+              <td id="noida_humidity"></td>
+              <td id="noida_min_temp"></td>
+              <td id="noida_max_temp"></td>
+              <td id="noida_wind_speed"></td>
+              <td id="noida_wind_degrees"></td>
+              <td id="noida_sunrise"></td>
+              <td id="noida_sunset"></td>
+            </tr>
+            <tr>
+              <th scope="row">Jaipur</th>
+              <td id="jaipur_cloud_pct"></td>
+              <td id="jaipur_temp"></td>
+              <td id="jaipur_feels_like"></td>
+              <td id="jaipur_humidity"></td>
+              <td id="jaipur_min_temp"></td>
+              <td id="jaipur_max_temp"></td>
+              <td id="jaipur_wind_speed"></td>
+              <td id="jaipur_wind_degrees"></td>
+              <td id="jaipur_sunrise"></td>
+              <td id="jaipur_sunset"></td>
+            </tr>
+          </tbody>
+        </table>
+     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
